@@ -48,5 +48,21 @@ Presiona _LCTRL_ y después _o_.
 **Reiniciar Varibales**
 Si ya habías presionado una tecla especial pero te equivocaste puesde nuevamente presionar la misma tecla para cancelarla o también puedes presionar _ESC_, la diferencia es que _ESC_ reinicia todas las variables de las teclas ya presionadas.
 
+**Visualizar Valores de Aristas**
+No debes tener activados ninguna tecla especial (ejemplo: _LSHIFT_,_LCTRL_,etc...), solo presiona la tecla _a_. Para dejar de ver los valores nuevamente presiona _a_ sin tener telcas especiales activadas.
+
 ## Algoritmos y Funciones
 
+**Árbol Generador**
+
+Para usar Prim debe estar activa la tecla _CTRL_ y después presionar _p_. Al actvar este método se bloquean TODAS las demas funcionalidades hasta que termine.
+
+Para usar Kruskal debe estar activa la tecla _CTRL_ y después presionar _k_. Al actvar este método se bloquean TODAS las demas funcionalidades hasta que termine.
+
+**Grafos Aleatorios**
+
+Presionar la tecla _1_ hace que entres a un submenu donde permite crear grafos de manera aleatoria, para ello hay 2 formas. La primera es usando probabilidades y la segunda es por cantidad de aristas. Para aumentar|disminuir la cantidad de nodos presiona _flecha arriba_|_flecha abajo_, para aumentar|disminuir la probabilidad|cantidad de aritas presiona _flecha izq_|_flecha der_. Y para cambiar de modo entre probabilidad y cantidad de aristas es necesario hacer click en el circulo que esta a la izquierda del modo al cual se quiere acceder.
+
+**Saber si el grafo es Árbol,Conexo**
+
+Presiona la tecla _i_, en la esquina inferior derecha saldrá dos textos los cuales te dirán que propiades cumple tu grafo.
