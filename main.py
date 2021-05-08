@@ -103,7 +103,7 @@ for i in range(n):
             flag = True
             break
         elif '-f' in sys.argv[i]:
-            h -= 52
+            h -= 80
             flag = True
     except:
         w = GetSystemMetrics(0)
