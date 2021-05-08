@@ -23,10 +23,28 @@ def recolor_graph(g):
 def command_save(g,logger):
     recolor_graph(g)
     save_graph(g,logger)
-    window_name = "Crear Grafos"
+    window_name = "Guardar Grafos"
     handle = FindWindow(None, window_name)
     SetWindowPos(handle, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE)
     #print("se guarda el arbol")
+
+def command_open(g,logger):
+    new_graph = load_graph("./",logger)
+    if new_graph is not None:
+        g = new_graph
+        window_name = "Crear Grafos"
+        handle = FindWindow(None, window_name)
+        SetWindowPos(handle, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE)
+        is_connected = g.isConnected()
+        is_tree = g.isTree()
+        return g,is_connected,is_tree
+    else:
+        logger.info("error al cargar el archivo seleccionado")
+        print("error al cargar el archivo seleccionado")
+        is_connected = g.isConnected()
+        is_tree = g.isTree()
+        return g,is_connected,is_tree
+
 
 
 logging.basicConfig(filename="Pygraph.log",format='%(asctime)s %(message)s',filemode="w")
@@ -35,15 +53,12 @@ logger.setLevel(logging.DEBUG)
 
 logger.info("Pygraph version:"+str(__version__))
 
-w = GetSystemMetrics(0)#-200
-h = GetSystemMetrics(1)#-200
-#print(w,h)
-pg.init()
-screen = pg.display.set_mode((w,h))
-pg.display.set_caption("Crear Grafos")
+w = GetSystemMetrics(0)
+h = GetSystemMetrics(1)
 
 G = PyGraph()
 
+#cosas para mover el grafo con el click derecho
 prev_mouse_pos = None
 detect_mouse_move = []
 iterator_mouse_move = 0
@@ -57,15 +72,53 @@ new_graph = None #para el nuevo grafo
 save_new_graph = None #pregunta 
 output = None #donde se guarda el nuevo grafo en caso de que asi sea
 
+#cosas para los grafos aleatorios
 press_1 = False
 default_p = ['p',5,0.5]
 default_m = ['m',5,6]
 
+#info extra, es arbol?, es conexo?
 press_i = False
 is_connected = False
 is_tree = False
 
-zoom = 1.0
+zoom = 1.0 # mostrar el zoom siempre
+
+# flags
+n = len(sys.argv)
+flag = False
+
+for i in range(n):
+    try:
+        if '-s' in sys.argv[i]:
+            h = int(sys.argv[i+1])
+            w = int(sys.argv[i+2])
+            flag = True
+            break
+        elif '-p' in sys.argv[i]:
+            if float(sys.argv[i+1]) <= 1.0:
+                h = int(h*float(sys.argv[i+1]))
+            if float(sys.argv[i+2]) <= 1.0:
+                w = int(w*float(sys.argv[i+2]))
+            flag = True
+            break
+        elif '-f' in sys.argv[i]:
+            h -= 52
+            flag = True
+    except:
+        w = GetSystemMetrics(0)
+        h = GetSystemMetrics(1)
+        pass
+    
+    
+if not flag:
+    w -= 200
+    h -= 200
+
+#iniciar la ventana
+pg.init()
+screen = pg.display.set_mode((w,h))
+pg.display.set_caption("Crear Grafos")
 
 while True:
     screen.fill((0,0,0))    
@@ -360,20 +413,9 @@ while True:
                 a_node = False
                 command_save(G,logger)
             elif event.key == pg.K_o and a_node and not Block[0]: # Press o, open graph
-                new_graph = load_graph("./",logger)
                 a_node = False
-                if new_graph is not None:
-                    #del G
-                    G = new_graph
-                    window_name = "Crear Grafos"
-                    handle = FindWindow(None, window_name)
-                    SetWindowPos(handle, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE)
-                    is_connected = G.isConnected()
-                    is_tree = G.isTree()
-                else:
-                    logger.info("error al cargar el archivo seleccionado")
-                    print("error al cargar el archivo seleccionado")
-
+                G,is_connected,is_tree = command_open(G,logger)
+                
         if event.type == pg.MOUSEBUTTONDOWN and not Block[0] and pg.mouse.get_pressed()[0]:
             G.mouse_clicked = True
             if a_node: # Crear Nodo

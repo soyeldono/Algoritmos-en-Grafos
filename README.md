@@ -7,18 +7,24 @@ PyGraph es una aplicación creada para el curso de Algoritmos en Grafos la cual 
 ## Instalación y Ejecución
 
 1. Revisa que tienes las librerias necesarias:
+- python >= 3.7
  - pywin32==300
  - pygame==2.0.1
  - win32gui==221. 6
 2.  Clona/Descarga el repositorio
 ```
-git clone https://github.com/soyeldono/Algoritmos-en-Grafos
+git clone https://github.com/soyeldono/Algoritmos-en-Grafos.git
 ``` 
 3. Ejecuta el archivo **main.py** en la misma carpeta de **gui.py pygraph.py**
 
+4. [Opcional] Por defecto el tamaño de la ventana es la resolución de tu monitor - 200 en ambas direcciones. Pero puedes cambiarlo manualmente agregando banderas en la linea de comandos al momento de ejecutar el programa:
+
+	- **-s [height width]** para ajustar el tamaño de la ventana a la resolución que se escriba, ejemplo: ```python main.py -s 600 800```. 
+	- **-p [height width]** para ajustar el tamaño de la ventana en porcentaje al tamaño del monitor, (rango de 0 a 1). ejemplo: ```python main.py -p 0.6 0.8```.
+	- **-f** para poner la ventana del tamaño de la pantalla (full screen), ejemplo: ```python main.py -f```.
 ## Manual de Uso
 
-PyGraph funciona a base de presionado de teclas específicas. Sin importar la tecla especial que se presione, abajo a la izquierda de la ventana saldrá un mensaje con la tecla que actualmente esta activa.
+PyGraph funciona a base del presionado de teclas específicas. Sin importar la tecla especial que se presione, abajo a la izquierda de la ventana saldrá un mensaje con la tecla que actualmente esta activa.
 
 **Crear Nodos**
 Presiona _LCTRL_ una sola vez y ahora solo da click en donde quieras y las veces que quieras para crear un Nodo por cada click. Para desactivar esta función vuelve a presionar _LCTRL_. (_LCTRL_ = Left CTRL)
