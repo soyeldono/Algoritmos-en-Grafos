@@ -11,7 +11,7 @@ from win32con import SWP_NOMOVE, SWP_NOSIZE, HWND_TOP
 from win32gui import FindWindow, SetWindowPos
 import time
 
-__version__ = "1.5.1"
+__version__ = "1.5.3"
 
 def recolor_graph(g):
     for i in g.nodes:
