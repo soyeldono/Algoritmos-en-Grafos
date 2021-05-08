@@ -17,7 +17,7 @@ git clone https://github.com/soyeldono/Algoritmos-en-Grafos.git
 ``` 
 3. Ejecuta el archivo **main.py** en la misma carpeta de **gui.py pygraph.py**
 
-4. [Opcional] Por defecto el tamaño de la ventana es la resolución de tu monitor - 200 en ambas coordenadas. Pero puedes cambiarlo manualmente agregando banderas en la linea de comandos al momento de ejecutar el programa:
+4. [Opcional] Por defecto el tamaño de la ventana es la resolución de tu monitor - 200pixeles en ambas coordenadas. Pero puedes cambiarlo manualmente agregando banderas en la linea de comandos al momento de ejecutar el programa:
 
 	- **-s [height width]** para ajustar el tamaño de la ventana a la resolución que se escriba, ejemplo: ```python main.py -s 600 800```. 
 	- **-p [height width]** para ajustar el tamaño de la ventana en porcentaje al tamaño del monitor, (rango de 0 a 1). ejemplo: ```python main.py -p 0.6 0.8```.
