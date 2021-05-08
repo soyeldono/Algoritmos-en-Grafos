@@ -35,8 +35,8 @@ logger.setLevel(logging.DEBUG)
 
 logger.info("Pygraph version:"+str(__version__))
 
-w = GetSystemMetrics(0)-200
-h = GetSystemMetrics(1)-200
+w = GetSystemMetrics(0)#-200
+h = GetSystemMetrics(1)#-200
 #print(w,h)
 pg.init()
 screen = pg.display.set_mode((w,h))
@@ -88,16 +88,16 @@ while True:
                 # mover en Y
                 if abs(detect_mouse_move[0][1]-detect_mouse_move[1][1]) >= 60:
                     if pg.mouse.get_pos()[1] < prev_mouse_pos[1]:
-                        i.coordinates = (i.coordinates[0], i.coordinates[1]-(25/zoom))
+                        i.coordinates = (i.coordinates[0], i.coordinates[1]-(35/zoom))
                     elif pg.mouse.get_pos()[1] > prev_mouse_pos[1]:
-                        i.coordinates = (i.coordinates[0], i.coordinates[1]+(25/zoom))
+                        i.coordinates = (i.coordinates[0], i.coordinates[1]+(35/zoom))
 
                 # mover en X
                 if abs(detect_mouse_move[0][0]-detect_mouse_move[1][0]) >= 60:
                     if pg.mouse.get_pos()[0] < prev_mouse_pos[0]:
-                        i.coordinates = (i.coordinates[0]-(25/zoom), i.coordinates[1])
+                        i.coordinates = (i.coordinates[0]-(35/zoom), i.coordinates[1])
                     elif pg.mouse.get_pos()[0] > prev_mouse_pos[0]:
-                        i.coordinates = (i.coordinates[0]+(25/zoom), i.coordinates[1])
+                        i.coordinates = (i.coordinates[0]+(35/zoom), i.coordinates[1])
             iterator_mouse_move = 0
             detect_mouse_move = []
 
@@ -187,7 +187,6 @@ while True:
                 press_i = not press_i
                 is_connected = G.isConnected()
                 is_tree = G.isTree()
-
             elif event.key == pg.K_1: # presionar 1, crear grafos aleatorios
                 press_1 = not press_1
                 if len(G.nodes) > 0 and press_1:
@@ -312,6 +311,8 @@ while True:
                 G.follow = None
                 just_s[0] = False
                 new_graph = PyGraph()
+                is_connected = G.isConnected()
+                is_tree = G.isTree()
             elif event.key == pg.K_k and a_node and not Block[0]: # Kruskal algorithm
                 logger.info("Metodo Kruskal iniciado")
                 Block[0] = True
@@ -325,6 +326,8 @@ while True:
                 G.follow = None
                 just_s[0] = False
                 new_graph = PyGraph()
+                is_connected = G.isConnected()
+                is_tree = G.isTree()
             elif event.key == pg.K_RETURN and not Block[0] and save_new_graph == "¿": # Confirm save graph by algorithm
                 del G
                 G = output
@@ -365,10 +368,11 @@ while True:
                     window_name = "Crear Grafos"
                     handle = FindWindow(None, window_name)
                     SetWindowPos(handle, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE)
+                    is_connected = G.isConnected()
+                    is_tree = G.isTree()
                 else:
                     logger.info("error al cargar el archivo seleccionado")
                     print("error al cargar el archivo seleccionado")
-                
 
         if event.type == pg.MOUSEBUTTONDOWN and not Block[0] and pg.mouse.get_pressed()[0]:
             G.mouse_clicked = True
