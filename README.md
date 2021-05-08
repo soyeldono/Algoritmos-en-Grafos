@@ -2,6 +2,8 @@
 
 PyGraph es una aplicación creada para el curso de Algoritmos en Grafos la cual tiene como objetivo, el poder trabajar con grafos unidireccionales. 
 
+![intro](https://user-images.githubusercontent.com/38016639/117523676-43e94300-af7f-11eb-8c63-6e3a39ea33f2.gif)
+
 ## Instalación y Ejecución
 
 1. Revisa que tienes las librerias necesarias:
