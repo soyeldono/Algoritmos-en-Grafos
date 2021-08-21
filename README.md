@@ -1,76 +1,57 @@
-# PyGraph
+# PyGraph 2.0
 
-PyGraph es una aplicación creada para el curso de Algoritmos en Grafos la cual tiene como objetivo, el poder trabajar con grafos unidireccionales. 
+PyGraph allows works with graph unidirectional. Pygraph was created to use in class "Algoritmos en Grafos".
 
-![intro](https://user-images.githubusercontent.com/38016639/117523676-43e94300-af7f-11eb-8c63-6e3a39ea33f2.gif)
+![2021-08-21 13-04-17](https://user-images.githubusercontent.com/38016639/130331370-347a4dee-b4ef-4f0e-8288-46583533ab98.gif)
 
-## Instalación y Ejecución
+## Instalatrion and Execute
 
-1. Revisa que tienes las librerias necesarias:
+1. Install the requirements:
 - python >= 3.7
  - pywin32==300
  - pygame==2.0.1
  - win32gui==221. 6
-2.  Clona/Descarga el repositorio
+2.  Clone the repo
 ```
 git clone https://github.com/soyeldono/Algoritmos-en-Grafos.git
 ``` 
-3. Ejecuta el archivo **main.py** en la misma carpeta de **gui.py pygraph.py**
+3. Execute **main.py**
 
-4. [Opcional] Por defecto el tamaño de la ventana es la resolución de tu monitor - 200pixeles en ambas coordenadas. Pero puedes cambiarlo manualmente agregando banderas en la linea de comandos al momento de ejecutar el programa:
+## How to use
 
-	- **-s [height width]** para ajustar el tamaño de la ventana a la resolución que se escriba, ejemplo: ```python main.py -s 600 800```. 
-	- **-p [height width]** para ajustar el tamaño de la ventana en porcentaje al tamaño del monitor, (rango de 0 a 1). ejemplo: ```python main.py -p 0.6 0.8```.
-	- **-f** para poner la ventana del tamaño de la pantalla (full screen), ejemplo: ```python main.py -f```.
-## Manual de Uso
+**Create Node** _LCTRL_ + _RCLICK_ (_LCTRL_: Left Control, _RCLICK_: Rigth Click)
 
-PyGraph funciona a base del presionado de teclas específicas. Sin importar la tecla especial que se presione, abajo a la izquierda de la ventana saldrá un mensaje con la tecla que actualmente esta activa.
+**Create Edges** _LSHIFT_ + _RICLICK_ on Node (_LSHIFT_:Left Shift)
 
-**Crear Nodos**
-Presiona _LCTRL_ una sola vez y ahora solo da click en donde quieras y las veces que quieras para crear un Nodo por cada click. Para desactivar esta función vuelve a presionar _LCTRL_. (_LCTRL_ = Left CTRL)
+**Move Nodes** Press _m_ and then _LCLICK_ on Node
 
-**Crear Aristas**
-Presiona _LSHIFT_ una sola vez y ahora haz click encima de los nodos que quieras crear una Arista. Para desactivar esta función vuelve a presionar _LSHIFT_. (_LSHIFT_ = Left SHIFT)
+**Delete Node|Edge** _Supr_ + _LCLICK_ on Node or Edge
 
-**Mover Nodos**
-Presiona _m_ una sola vez y ahora haz click encima de los nodos que quieras mover de lugar. Para desactivar esta función vuelve a presionar _m_. (_m_= tecla m minúscula)
+**Show Info** _i_, show ID Node and Edges Values
 
-**Borrar Nodos/Aristas**
-Presiona _Supr_ una sola vez y ahora haz click encima del nodo o arista para borrarlo. Para desactivar esta función vuelve a presionar _Supr_.
+**Show Extra Info** _LCTRL_ + _i_
 
-**Inicializar Valores de las Aritas Aleatoriamente**
-Presiona _LCTRL_ + _LSHIFT_ + _r_ 
+## Random Graph
 
-**Reiniciar Proyecto**
-Presiona _LALT_ una sola vez y después _r_. (Borrará el grafo que actualmente estes trabajando)(_LALT_ = Left ALT)
+The program have 3 algortihm to create a random graph:
 
-**ZOOM y Mover el Grafo Entero (en desarrollo)** 
-En caso de tener proyectos muy grandes se puede hacer zoom con solo hacer girar la rueda del mouse (scroll mouse), el zoom se hará en torno a la posición del mouse. Para mover el grafo entero manten presionado el click derecho del mouse y mueve a la dirección donde quiere que se mueva. (Esta función aun sigue en desarrollo por lo que si llegas a encontrar un bug agradecería que lo comentaras para poder solucionarlo)
+- Probability: Use a 'p' probability to create the graph
+- M edges: Use 'm' edges to create the graph
+- Connected: Ensure that the graph will be connected
 
-**Guardar Proyecto**
-Presiona _LCTRL_ y después _s_. (Se guardara en formato *.pg)
+By default the program create a graph with 10 Nodes with 0.5 probability to make an edge. To use it press _1_
 
-**Abrir Proyecto**
-Presiona _LCTRL_ y después _o_. 
+## Random Tree
 
-**Reiniciar Varibales**
-Si ya habías presionado una tecla especial pero te equivocaste puesde nuevamente presionar la misma tecla para cancelarla o también puedes presionar _ESC_, la diferencia es que _ESC_ reinicia todas las variables de las teclas ya presionadas.
+You can choose between a binary random tree or random tree. To use it press _2_
 
-**Visualizar Valores de Aristas**
-No debes tener activados ninguna tecla especial (ejemplo: _LSHIFT_,_LCTRL_,etc...), solo presiona la tecla _a_. Para dejar de ver los valores nuevamente presiona _a_ sin tener telcas especiales activadas.
+## Minimun Spanning Tree
 
-## Algoritmos y Funciones
+- Algorithm Prim: Press _p_
+- Algotithm Kruskal: Press _k_
 
-**Árbol Generador**
+## Funcionts
 
-Para usar Prim debe estar activa la tecla _CTRL_ y después presionar _p_. Al actvar este método se bloquean TODAS las demas funcionalidades hasta que termine.
-
-Para usar Kruskal debe estar activa la tecla _CTRL_ y después presionar _k_. Al actvar este método se bloquean TODAS las demas funcionalidades hasta que termine.
-
-**Grafos Aleatorios**
-
-Presionar la tecla _1_ hace que entres a un submenu donde permite crear grafos de manera aleatoria, para ello hay 2 formas. La primera es usando probabilidades y la segunda es por cantidad de aristas. Para aumentar|disminuir la cantidad de nodos presiona _flecha arriba_|_flecha abajo_, para aumentar|disminuir la probabilidad|cantidad de aritas presiona _flecha izq_|_flecha der_. Y para cambiar de modo entre probabilidad y cantidad de aristas es necesario hacer click en el circulo que esta a la izquierda del modo al cual se quiere acceder.
-
-**Saber si el grafo es Árbol,Conexo**
-
-Presiona la tecla _i_, en la esquina inferior derecha saldrá dos textos los cuales te dirán que propiades cumple tu grafo.
+- is_connected
+- is_tree
+- num_connected_components
