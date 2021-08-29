@@ -1,6 +1,6 @@
 # PyGraph 2.0
 
-PyGraph allows works with graph unidirectional. Pygraph was created to use in class "Algoritmos en Grafos".
+PyGraph allows TO works with graph unidirectional. Pygraph was created to use in the class "Algoritmos en Grafos".
 
 ![2021-08-21 13-04-17](https://user-images.githubusercontent.com/38016639/130331370-347a4dee-b4ef-4f0e-8288-46583533ab98.gif)
 
@@ -19,9 +19,9 @@ git clone https://github.com/soyeldono/Algoritmos-en-Grafos.git
 
 ## How to use
 
-**Create Node** _LCTRL_ + _RCLICK_ (_LCTRL_: Left Control, _RCLICK_: Rigth Click)
+**Create Node** _LCTRL_ + _LCLICK_ (_LCTRL_: Left Control, _LCLICK_: Left Click)
 
-**Create Edges** _LSHIFT_ + _RICLICK_ on Node (_LSHIFT_:Left Shift)
+**Create Edges** _LSHIFT_ + _LCLICK_ on Node (_LSHIFT_:Left Shift)
 
 **Move Nodes** Press _m_ and then _LCLICK_ on Node
 
