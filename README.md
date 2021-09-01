@@ -39,11 +39,13 @@ The program have 3 algortihm to create a random graph:
 - M edges: Use 'm' edges to create the graph
 - Connected: Ensure that the graph will be connected
 
-By default the program create a graph with 10 Nodes with 0.5 probability to make an edge. To use it press _1_
+By default the program create a graph with 10 Nodes and 0.5 probability to make an edge. To use it press _1_
 
 ## Random Tree
 
 You can choose between a binary random tree or random tree. To use it press _2_
+
+By default the program create a random tree and not binary.
 
 ## Minimun Spanning Tree
 
