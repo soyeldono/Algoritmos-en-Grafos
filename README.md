@@ -4,7 +4,7 @@ PyGraph allows to works with graph unidirectional. Pygraph was created to use in
 
 ![2021-08-21 13-04-17](https://user-images.githubusercontent.com/38016639/130331370-347a4dee-b4ef-4f0e-8288-46583533ab98.gif)
 
-## Instalatrion and Execute
+## Instalation and Execute
 
 1. Install the requirements:
 - python >= 3.7
