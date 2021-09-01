@@ -52,7 +52,7 @@ You can choose between a binary random tree or random tree. To use it press _2_
 
 Press _space_ to continue the animation.
 
-## Funcionts
+## Functions
 
 - is_connected
 - is_tree
