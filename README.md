@@ -50,6 +50,8 @@ You can choose between a binary random tree or random tree. To use it press _2_
 - Algorithm Prim: Press _p_
 - Algotithm Kruskal: Press _k_
 
+Press _space_ to continue the animation.
+
 ## Funcionts
 
 - is_connected
